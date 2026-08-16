@@ -1,0 +1,156 @@
+.section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.section.beforeMode {
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
+
+.section.afterMode {
+  background-color: var(--color-white);
+  color: var(--color-black);
+}
+
+.content {
+  width: 100%;
+  padding: var(--spacing-xl) 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: var(--spacing-xl);
+}
+
+.headline {
+  font-size: var(--text-h2);
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+.headlineLine {
+  display: block;
+  opacity: 0.2;
+  transition: opacity 0.5s ease;
+}
+
+.headlineLine.active {
+  opacity: 1;
+}
+
+.toggleContainer {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 1.25rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.toggleBtn {
+  opacity: 0.3;
+  transition: opacity 0.3s ease;
+  min-height: 56px;
+  display: flex;
+  align-items: center;
+}
+
+.toggleBtn.active {
+  opacity: 1;
+}
+
+.divider {
+  opacity: 0.3;
+  display: flex;
+  align-items: center;
+}
+
+.splitLayout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+}
+
+.listInner {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.imageCol {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4/5;
+  background-color: var(--color-gray);
+  overflow: hidden;
+}
+
+.imageWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.listItem {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(128, 128, 128, 0.3);
+}
+
+.listTitle {
+  font-family: var(--font-display), sans-serif;
+  font-size: 1.25rem;
+  color: var(--color-blue);
+}
+
+.listText {
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+@media (max-width: 1024px) {
+  .splitLayout {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+  
+  .listInner {
+    grid-template-columns: 1fr;
+  }
+  
+  .headline {
+    font-size: clamp(3rem, 12vw, 4.5rem);
+  }
+}

@@ -1,0 +1,215 @@
+.hero {
+  position: relative;
+  min-height: 100svh;
+  padding-top: 120px;
+  padding-bottom: var(--spacing-xl);
+  overflow: hidden;
+  background-color: var(--color-white);
+  display: flex;
+  align-items: center;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 2rem;
+  align-items: center;
+}
+
+.label {
+  grid-column: 1 / 8;
+  grid-row: 1;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--spacing-md);
+  overflow: hidden;
+  align-self: end;
+}
+
+.headline {
+  grid-column: 1 / 8;
+  grid-row: 2;
+  font-size: var(--text-h1);
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  margin-bottom: var(--spacing-md);
+}
+
+.headlineLine {
+  display: block;
+  overflow: hidden;
+}
+
+.blueText {
+  color: var(--color-blue);
+  display: inline-block;
+  position: relative;
+}
+
+.blueText::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-blue);
+  transform-origin: left;
+  z-index: -1;
+  opacity: 0.1;
+}
+
+.supporting {
+  grid-column: 1 / 8;
+  grid-row: 3;
+  font-size: var(--text-body);
+  max-width: 480px;
+  line-height: 1.6;
+  margin-bottom: var(--spacing-lg);
+  opacity: 0.8;
+}
+
+.actions {
+  grid-column: 1 / 8;
+  grid-row: 4;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  align-self: start;
+}
+
+.primaryCta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--color-blue);
+  color: var(--color-white);
+  padding: 1rem 2rem;
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+@media (hover: hover) {
+  .primaryCta:hover {
+    background-color: #0d46db;
+    transform: translateY(-2px);
+  }
+}
+
+.secondaryCta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: color 0.2s ease;
+}
+
+@media (hover: hover) {
+  .secondaryCta:hover {
+    color: var(--color-blue);
+  }
+}
+
+.imageCol {
+  grid-column: 8 / 13;
+  grid-row: 1 / 5;
+  position: relative;
+}
+
+.imageWrapper {
+  position: relative;
+  aspect-ratio: 4/5;
+  width: 100%;
+  background-color: var(--color-soft-white);
+  overflow: hidden;
+  z-index: 2;
+}
+
+.decorations {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.gridLines {
+  position: absolute;
+  top: -10%;
+  left: -20%;
+  width: 140%;
+  height: 120%;
+  background-image: 
+    linear-gradient(to right, rgba(20, 87, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(20, 87, 255, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.digitalMark1 {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  width: 100px;
+  height: 100px;
+  border-top: 2px solid var(--color-blue);
+  border-left: 2px solid var(--color-blue);
+}
+
+.digitalMark2 {
+  position: absolute;
+  bottom: 20%;
+  right: -30px;
+  width: 40px;
+  height: 120px;
+  background-color: var(--color-blue);
+  opacity: 0.1;
+}
+
+@media (max-width: 1024px) {
+  .label { grid-column: 1 / 13; grid-row: 1; margin-bottom: 1rem; }
+  .headline { grid-column: 1 / 13; grid-row: 2; }
+  .imageCol { 
+    grid-column: 1 / 13; 
+    grid-row: 3; 
+    width: 100%;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+  .supporting { grid-column: 1 / 13; grid-row: 4; }
+  .actions { grid-column: 1 / 13; grid-row: 5; }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding-top: 100px;
+  }
+  .actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+    width: 100%;
+  }
+  .primaryCta {
+    width: 100%;
+    justify-content: center;
+  }
+  .secondaryCta {
+    width: 100%;
+    justify-content: center;
+    padding: 1rem;
+    border: 1px solid var(--color-gray);
+  }
+}

@@ -1,0 +1,159 @@
+.section {
+  background-color: var(--color-white);
+  color: var(--color-black);
+  padding: var(--spacing-xl) 0;
+  position: relative;
+}
+
+.label {
+  color: var(--color-blue);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--spacing-lg);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.label::before {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 2px;
+  background-color: var(--color-blue);
+}
+
+.headline {
+  font-size: var(--text-h2);
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--spacing-xl);
+  text-transform: uppercase;
+}
+
+.editorialFlow {
+  display: flex;
+  flex-direction: column;
+  gap: 10vh;
+  margin-bottom: var(--spacing-xl);
+}
+
+.editorialRow {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 2rem;
+  align-items: center;
+}
+
+.imageWrapper {
+  position: relative;
+  background-color: var(--color-gray);
+  overflow: hidden;
+}
+
+.portraitLarge {
+  grid-column: 1 / 7;
+  aspect-ratio: 4/5;
+}
+
+.squareSmall {
+  grid-column: 7 / 13;
+  aspect-ratio: 1;
+}
+
+.squareDetail {
+  grid-column: 3 / 8;
+  aspect-ratio: 1;
+}
+
+.portraitWide {
+  width: 100%;
+  aspect-ratio: 16/9;
+}
+
+.textContent {
+  grid-column: 7 / 13;
+  display: flex;
+  flex-direction: column;
+}
+
+.reverseRow .textContent {
+  grid-column: 1 / 7;
+}
+
+.finalRow .portraitLarge {
+  grid-column: 7 / 13;
+}
+
+.sequenceNumCentered, .sequenceNum {
+  font-family: var(--font-display), sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-blue);
+  margin-bottom: 1rem;
+}
+
+.sequenceNumCentered {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.storyTitle {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+.storyText {
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 1.6;
+  opacity: 0.8;
+  max-width: 480px;
+}
+
+.simulasiLabel {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background-color: var(--color-blue);
+  color: var(--color-white);
+  padding: 0.5rem 1rem;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  z-index: 2;
+}
+
+@media (max-width: 1024px) {
+  .portraitLarge, .squareSmall, .squareDetail, .textContent, .reverseRow .textContent, .finalRow .portraitLarge {
+    grid-column: 1 / 13;
+  }
+  
+  .reverseRow {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: var(--spacing-lg) 0;
+  }
+  .headline {
+    margin-bottom: var(--spacing-lg);
+  }
+  .editorialRow {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .portraitWide {
+    aspect-ratio: 4/5;
+  }
+}
