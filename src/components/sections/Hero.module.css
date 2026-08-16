@@ -1,8 +1,8 @@
 .hero {
   position: relative;
-  min-height: 100svh;
-  padding-top: 120px;
-  padding-bottom: var(--spacing-xl);
+  min-height: calc(100svh - 80px);
+  margin-top: 80px; /* offset for fixed navbar */
+  padding: 2rem 0;
   overflow: hidden;
   background-color: var(--color-white);
   display: flex;
@@ -19,25 +19,25 @@
 }
 
 .label {
-  grid-column: 1 / 8;
+  grid-column: 1 / 7;
   grid-row: 1;
   font-size: 12px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  margin-bottom: var(--spacing-md);
+  margin-bottom: 1rem;
   overflow: hidden;
   align-self: end;
 }
 
 .headline {
-  grid-column: 1 / 8;
+  grid-column: 1 / 7;
   grid-row: 2;
-  font-size: var(--text-h1);
+  font-size: clamp(3rem, 6.5vw, 7.5rem);
   font-weight: 800;
-  line-height: 0.95;
-  letter-spacing: -0.03em;
-  margin-bottom: var(--spacing-md);
+  line-height: 0.85;
+  letter-spacing: -0.04em;
+  margin-bottom: 1.5rem;
 }
 
 .headlineLine {
@@ -47,16 +47,18 @@
 
 .blueText {
   color: var(--color-blue);
-  display: inline-block;
   position: relative;
+  width: max-content;
+  max-width: 100%;
+  white-space: normal;
 }
 
 .blueText::after {
   content: "";
   position: absolute;
   top: 0;
-  left: 0;
-  width: 100%;
+  left: -2%;
+  width: 104%;
   height: 100%;
   background-color: var(--color-blue);
   transform-origin: left;
@@ -65,17 +67,17 @@
 }
 
 .supporting {
-  grid-column: 1 / 8;
+  grid-column: 1 / 7;
   grid-row: 3;
-  font-size: var(--text-body);
+  font-size: clamp(1rem, 1.2vw, 1.125rem);
   max-width: 480px;
   line-height: 1.6;
-  margin-bottom: var(--spacing-lg);
+  margin-bottom: 2rem;
   opacity: 0.8;
 }
 
 .actions {
-  grid-column: 1 / 8;
+  grid-column: 1 / 7;
   grid-row: 4;
   display: flex;
   align-items: center;
@@ -122,15 +124,17 @@
 }
 
 .imageCol {
-  grid-column: 8 / 13;
+  grid-column: 7 / 13;
   grid-row: 1 / 5;
   position: relative;
+  display: flex;
+  align-items: center;
 }
 
 .imageWrapper {
   position: relative;
-  aspect-ratio: 4/5;
   width: 100%;
+  height: clamp(420px, 60svh, 680px);
   background-color: var(--color-soft-white);
   overflow: hidden;
   z-index: 2;
@@ -178,9 +182,40 @@
   opacity: 0.1;
 }
 
+@media (min-width: 1024px) and (max-height: 800px) {
+  .hero {
+    padding: 1rem 0;
+  }
+  .content {
+    gap: 1.5rem;
+  }
+  .label {
+    margin-bottom: 0.5rem;
+  }
+  .headline {
+    font-size: clamp(3rem, 5.5vw, 5.5rem);
+    margin-bottom: 1rem;
+    line-height: 0.82;
+  }
+  .supporting {
+    margin-bottom: 1.5rem;
+  }
+  .imageWrapper {
+    height: clamp(380px, 50svh, 550px);
+  }
+}
+
 @media (max-width: 1024px) {
+  .hero {
+    min-height: auto;
+    padding: 3rem 0;
+  }
   .label { grid-column: 1 / 13; grid-row: 1; margin-bottom: 1rem; }
-  .headline { grid-column: 1 / 13; grid-row: 2; }
+  .headline { 
+    grid-column: 1 / 13; 
+    grid-row: 2; 
+    font-size: clamp(3.5rem, 8vw, 5rem);
+  }
   .imageCol { 
     grid-column: 1 / 13; 
     grid-row: 3; 
@@ -188,13 +223,18 @@
     margin-top: 2rem;
     margin-bottom: 2rem;
   }
+  .imageWrapper {
+    height: auto;
+    aspect-ratio: 4/5;
+  }
   .supporting { grid-column: 1 / 13; grid-row: 4; }
   .actions { grid-column: 1 / 13; grid-row: 5; }
 }
 
 @media (max-width: 768px) {
   .hero {
-    padding-top: 100px;
+    padding-top: 2rem;
+    margin-top: 60px; /* mobile compact navbar */
   }
   .actions {
     flex-direction: column;

@@ -13,7 +13,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "SENTRA — Platform Transformasi Digital untuk UMKM Indonesia",
+  title: "SENTRA | Platform Transformasi Digital untuk UMKM Indonesia",
   description: "SENTRA membantu usaha lokal memahami kesiapan digital, membangun identitas, memperkuat kehadiran online, dan menentukan langkah pertumbuhan yang lebih terarah.",
 };
 
