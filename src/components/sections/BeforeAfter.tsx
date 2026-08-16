@@ -33,14 +33,14 @@ export default function BeforeAfter() {
           </h2>
 
           <div className={styles.toggleContainer}>
-            <button 
+            <button
               className={`${styles.toggleBtn} ${mode === "before" ? styles.active : ""}`}
               onClick={() => setMode("before")}
             >
               SEBELUM
             </button>
             <span className={styles.divider}>|</span>
-            <button 
+            <button
               className={`${styles.toggleBtn} ${mode === "after" ? styles.active : ""}`}
               onClick={() => setMode("after")}
             >
@@ -69,7 +69,7 @@ export default function BeforeAfter() {
               </motion.div>
             </AnimatePresence>
           </div>
-          
+
           <div className={styles.imageCol}>
             <AnimatePresence mode="wait">
               {mode === "before" ? (
@@ -82,7 +82,7 @@ export default function BeforeAfter() {
                   transition={{ duration: 0.6 }}
                 >
                   <SafeImage
-                    src="http://inalabs.id/umkm/bu-rini-usaha.webp"
+                    src="https://inalabs.id/umkm/bu-rini-usaha.webp"
                     fill
                     alt="Bu Rini menjalankan usaha kopi sebelum transformasi digital"
                     sizes="(max-width: 1024px) 100vw, 50vw"
@@ -99,7 +99,7 @@ export default function BeforeAfter() {
                   transition={{ duration: 0.6 }}
                 >
                   <SafeImage
-                    src="http://inalabs.id/umkm/bu-rini-after.webp"
+                    src="https://inalabs.id/umkm/bu-rini-after.webp"
                     fill
                     alt="Usaha Bu Rini setelah proses transformasi digital"
                     sizes="(max-width: 1024px) 100vw, 50vw"

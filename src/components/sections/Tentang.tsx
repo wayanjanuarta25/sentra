@@ -15,7 +15,7 @@ export default function Tentang() {
     <section className={styles.section} id="tentang">
       <div className={`container ${styles.content}`}>
         <div className={styles.leftCol}>
-          <motion.div 
+          <motion.div
             className={styles.label}
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -25,18 +25,18 @@ export default function Tentang() {
             03 / TENTANG SENTRA
           </motion.div>
 
-          <motion.h2 
+          <motion.h2
             className={`${styles.headline} font-display`}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
-            DIGITALISASI<br/>
+            DIGITALISASI<br />
             <span className={styles.highlight}>TIDAK HARUS RUMIT.</span>
           </motion.h2>
 
-          <motion.p 
+          <motion.p
             className={styles.supporting}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -50,8 +50,8 @@ export default function Tentang() {
         <div className={styles.rightCol}>
           <div className={styles.principles}>
             {PRINCIPLES.map((principle, i) => (
-              <motion.div 
-                key={principle.num} 
+              <motion.div
+                key={principle.num}
                 className={styles.principle}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -65,7 +65,7 @@ export default function Tentang() {
           </div>
         </div>
       </div>
-      
+
       <div className={styles.wideImageContainer}>
         <motion.div
           className={styles.wideImageInner}
@@ -74,8 +74,8 @@ export default function Tentang() {
           viewport={{ margin: "-100px" }}
           transition={{ duration: 1, ease: "easeOut" }}
         >
-          <SafeImage 
-            src="http://inalabs.id/umkm/warung-bu-rini-wide.webp"
+          <SafeImage
+            src="https://inalabs.id/umkm/warung-bu-rini-wide.webp"
             fill
             alt="Suasana usaha kopi lokal Indonesia"
             sizes="(max-width: 768px) 100vw, 90vw"
